@@ -1,98 +1,73 @@
-# Python_CRUD_eLibrary
+# 📚 E-Library Program
 
-# E-Library Program
-
-A comprehensive Python application for managing digital library data with Create, Read, Update, and Delete (CRUD) operations.  
-
-## Business Understanding
-
-Proyek ini dibuat untuk membantu pengelolaan perpustakaan digital dengan fitur peminjaman eBook, registrasi member, usulan buku baru, serta manajemen usulan oleh admin. Sistem ini mendukung proses digitalisasi perpustakaan agar lebih efisien, transparan, dan mudah diakses.
-
-### Manfaat:
-- **Kemudahan akses**: Member dapat meminjam eBook kapan saja secara online.  
-- **Transparansi**: Usulan buku baru bisa dilihat oleh semua member dan dikelola admin.  
-- **Efisiensi administrasi**: Admin dapat dengan cepat menyetujui atau menolak usulan buku.  
-- **Data terstruktur**: Informasi member, eBook, dan usulan tersimpan dalam struktur data Python yang jelas.  
-
-### Target Pengguna:
-- **Member perpustakaan** yang ingin meminjam eBook atau mengusulkan buku baru.  
-- **Admin perpustakaan** yang bertugas mengelola usulan dan mengawasi jalannya sistem.  
+**Developed by:** Shadrina Putri Nabila
+**Class:** JCDSBSDAM29
 
 ---
 
-## Features
+## 🔹 **Deskripsi**
 
-### Member
-- **Registrasi Member**: Menambahkan data member baru dengan validasi email unik.  
-- **Login Member**: Mengakses dashboard pribadi berdasarkan email terdaftar.  
-- **Pinjam eBook**: Memilih dan meminjam buku digital dari daftar yang tersedia.  
-- **Lihat eBook yang Dipinjam**: Mengecek daftar eBook yang sedang dipinjam.  
-- **Usulkan Buku**: Memberikan saran buku baru yang ingin ditambahkan ke perpustakaan.  
-- **Lihat Usulan Buku**: Melihat daftar usulan buku yang diajukan oleh semua member.  
-- **Hapus Usulan Saya**: Menghapus usulan yang statusnya masih pending.  
+E-Library, aplikasi sederhana untuk mengelola buku digital itu.
+Pengguna dapat:
 
-### Admin
-- **Login Admin**: Akses khusus untuk admin dengan email dan password.  
-- **Lihat Semua Usulan**: Menampilkan daftar usulan dari seluruh member.  
-- **Approve/Reject Usulan**: Menyetujui atau menolak usulan buku dengan status update otomatis.  
+* Menambahkan buku baru ke koleksi
+* Melihat daftar buku yang tersedia
+* Meminjam buku
+* Mengelola anggota dan transaksi peminjaman
 
-### Info Perpustakaan
-- Informasi umum mengenai aturan peminjaman eBook (misalnya durasi pinjam 7 hari).  
-- Kontak layanan perpustakaan (email dan telepon).  
+Struktur data Python, digunakan untuk menyimpan informasi buku, anggota, dan peminjaman.
 
 ---
 
-## Dummy Data
+## 🔹 **Fitur**
 
-Untuk keperluan testing, program ini menggunakan data dummy:
-
-- **Members**
-  - B01 - Andi | andi@email.com | Jakarta  
-  - B02 - Budi | budi@email.com | Bandung  
-  - B03 - Citra | citra@email.com | Surabaya  
-
-- **E-Books**
-  - Bumi – Tere Liye  
-  - Bulan – Tere Liye  
-  - Matahari – Tere Liye  
-  - Rindu – Tere Liye  
-  - Ayah – Andrea Hirata  
-  - Laskar Pelangi – Andrea Hirata  
-  - Negeri 5 Menara – Ahmad Fuadi  
-  - Ranah 3 Warna – Ahmad Fuadi  
-  - Dilan 1990 – Pidi Baiq  
-  - Dilan 1991 – Pidi Baiq  
-
-- **Admin**
-  - Email: `admin@perpus.com`  
-  - Password: `admin123`  
-
-- **Suggested Books**
-  - Kosong secara default, akan terisi jika member memberikan usulan.  
+* **Tambah Buku:** Menambahkan buku ke koleksi.
+* **Daftar Buku:** Menampilkan seluruh buku yang tersedia.
+* **Peminjaman Buku:** Meminjam buku oleh anggota.
+* **Data Anggota:** Menyimpan informasi anggota terdaftar.
 
 ---
 
-## Usage
+## 🔹 **Struktur Data**
 
-Setelah program dijalankan, menu utama akan muncul dengan pilihan:  
-
-1. Menu Member → login untuk akses dashboard member.  
-2. Registrasi Member → menambahkan member baru.  
-3. Lihat eBook → menampilkan daftar eBook yang tersedia.  
-4. Login Admin → masuk sebagai admin untuk mengelola usulan.  
-5. Info Perpustakaan → menampilkan informasi umum & kontak.  
-6. Keluar → menghentikan program.  
+| Variabel          | Tipe Data | Keterangan                               |
+| ----------------- | --------- | ---------------------------------------- |
+| `suggested_books` | list      | Daftar buku rekomendasi                  |
+| `borrowed_books`  | dict      | Data peminjaman buku (key: ID buku)      |
+| `members`         | list      | Anggota terdaftar                        |
+| `ebooks`          | list      | Koleksi buku (dictionary: title, author) |
 
 ---
 
-## Data Model
+## 🔹 **Data Dummy Contoh**
 
-Program ini menggunakan struktur **Collection Data Types (Python)**:  
+| ID  | Judul Buku | Penulis   |
+| --- | ---------- | --------- |
+| B01 | Bumi       | Tere Liye |
+| B02 | Bulan      | Tere Liye |
+| B03 | Anak Badai | Tere Liye |
 
-- `members` → list of dict, menyimpan data member (code, name, email, phone, address).  
-- `ebooks` → list of dict, menyimpan data eBook (title, author).  
-- `borrowed_books` → dict, menyimpan daftar eBook yang dipinjam per member.  
-- `suggested_books` → list of dict, menyimpan usulan buku dari member.  
-- `admins` → list of dict, menyimpan akun admin (email, password).  
+---
+
+## 🔹 **Contoh Interaksi**
+
+```text
+Selamat datang di E-Library!
+1. Lihat Koleksi Buku
+2. Tambah Buku
+3. Pinjam Buku
+4. Keluar
+
+Pilih menu: 1
+Daftar Buku Tersedia:
+B01 - Bumi (Tere Liye)
+B02 - Bulan (Tere Liye)
+B03 - Anak Badai (Tere Liye)
+
+Pilih menu: 3
+Masukkan ID Buku: B01
+Masukkan Nama Anggota: Budi
+Buku 'Bumi' berhasil dipinjam oleh Budi.
+```
 
 ---
