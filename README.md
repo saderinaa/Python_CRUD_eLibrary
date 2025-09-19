@@ -89,7 +89,7 @@ E-Library adalah aplikasi digital untuk mengelola eBook bagi anggota terdaftar. 
 
 ## 🔹 Instalasi
 
-**Persyaratan:** Python 3.7
+**Persyaratan:** Python 3.7+
 
 ---
 
