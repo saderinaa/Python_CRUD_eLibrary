@@ -72,24 +72,6 @@ Untuk keperluan testing, program ini menggunakan data dummy:
 
 ---
 
-## Installation
-
-### Prasyarat:
-- Python 3.7 atau lebih baru  
-
-### Cara Menjalankan:
-1. Clone repositori ini  
-   ```bash
-   git clone https://github.com/<your-username>/elibrary-program.git
-   cd elibrary-program
-   ```
-2. Jalankan program:  
-   ```bash
-   python main.py
-   ```
-
----
-
 ## Usage
 
 Setelah program dijalankan, menu utama akan muncul dengan pilihan:  
