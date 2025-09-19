@@ -1,42 +1,62 @@
-# 📚 E-Library Python CRUD Application
-Aplikasi Python untuk mengelola eBook dengan fitur CRUD untuk anggota dan admin.
+# 🔹 Python CRUD Application for E-Library
 
-## 🔹 Deskripsi
+Aplikasi Python untuk mengelola **sistem perpustakaan digital** dengan operasi Create, Read, Update, dan Delete (CRUD).
 
-E-Library adalah aplikasi sederhana untuk **mengelola buku digital**. Sistem ini dirancang untuk **anggota terdaftar** yang ingin meminjam eBook, mengusulkan buku baru, dan melihat daftar eBook yang mereka pinjam. Non-anggota hanya bisa melihat daftar eBook dan info perpustakaan.
+---
+
+## 🔹 Pemahaman Bisnis
+E-Library adalah aplikasi digital untuk mengelola eBook bagi anggota terdaftar. Sistem ini memudahkan anggota meminjam eBook, mengusulkan buku baru, dan melihat koleksi. Admin dapat menyaring usulan buku dan mengawasi aktivitas anggota.
+
+**Manfaat:**
+
+* Manajemen eBook dan peminjaman terorganisir.
+* Penanganan usulan buku oleh anggota lebih efisien.
+* Dashboard admin untuk approve/reject usulan buku.
+* Antarmuka mudah digunakan oleh anggota dan admin.
 
 ---
 
 ## 🔹 Sasaran Pengguna
 
-* **Anggota:** Bisa pinjam eBook, mengusulkan buku, dan melihat eBook yang dipinjam.  
-* **Admin / Pustakawan:** Bisa approve/reject usulan buku dan melihat semua usulan.  
-* **Non-anggota:** Bisa melihat daftar eBook dan info perpustakaan, tapi akses penuh hanya setelah registrasi menjadi anggota.
+* **Anggota:** Bisa registrasi, pinjam eBook, mengusulkan buku, dan melihat eBook yang dipinjam.
+* **Admin / Pustakawan:** Bisa approve/reject usulan buku dan memantau semua usulan.
+* **Non-anggota:** Bisa melihat daftar eBook dan info perpustakaan, tetapi akses penuh hanya setelah registrasi menjadi anggota.
 
 ---
 
 ## 🔹 Fitur
 
-* **Registrasi Member:** Mendaftarkan pengguna baru menjadi anggota.  
-* **Login Member:** Masuk ke dashboard anggota untuk mengakses fitur eBook.  
-* **Lihat eBook:** Menampilkan seluruh koleksi eBook.  
-* **Pinjam eBook:** Meminjam eBook untuk anggota terdaftar.  
-* **Usulkan Buku:** Member bisa mengusulkan buku baru untuk ditambahkan.  
-* **Hapus Usulan:** Member bisa menghapus usulan buku yang masih pending.  
-* **Admin Approve/Reject:** Admin dapat menyetujui atau menolak usulan buku.  
-* **Info Perpustakaan:** Menampilkan info layanan dan kontak perpustakaan.
+**Create:**
+
+* Registrasi anggota baru.
+* Usulkan eBook baru.
+
+**Read:**
+
+* Lihat daftar eBook.
+* Lihat eBook yang dipinjam anggota.
+* Lihat usulan eBook.
+* Info perpustakaan dan kontak.
+
+**Update:**
+
+* Admin dapat approve/reject usulan eBook.
+
+**Delete:**
+
+* Anggota dapat menghapus usulan eBook yang masih pending.
 
 ---
 
 ## 🔹 Struktur Data
 
-| Variabel          | Tipe Data | Keterangan                                |
-| ----------------- | --------- | ----------------------------------------- |
-| `suggested_books` | list      | Daftar buku usulan dari anggota           |
-| `borrowed_books`  | dict      | Data peminjaman eBook (key: kode anggota) |
-| `members`         | list      | Daftar anggota terdaftar                  |
-| `ebooks`          | list      | Koleksi eBook (dictionary: title, author) |
-| `admins`          | list      | Data admin untuk login                    |
+| Variabel          | Tipe Data | Keterangan                                              |
+| ----------------- | --------- | ------------------------------------------------------- |
+| `members`         | list      | Daftar anggota dengan code, name, email, phone, address |
+| `ebooks`          | list      | Koleksi eBook (title, author)                           |
+| `borrowed_books`  | dict      | Buku yang dipinjam oleh anggota (key: kode anggota)     |
+| `suggested_books` | list      | Buku yang diusulkan anggota dengan status dan pengusul  |
+| `admins`          | list      | Data admin untuk login                                  |
 
 ---
 
@@ -50,7 +70,7 @@ E-Library adalah aplikasi sederhana untuk **mengelola buku digital**. Sistem ini
 | B02  | Budi  | [budi@email.com](mailto:budi@email.com)   | 082233445566 | Bandung  |
 | B03  | Citra | [citra@email.com](mailto:citra@email.com) | 083344556677 | Surabaya |
 
-**eBook:**
+**eBooks:**
 
 | Judul           | Penulis       |
 | --------------- | ------------- |
@@ -64,6 +84,29 @@ E-Library adalah aplikasi sederhana untuk **mengelola buku digital**. Sistem ini
 | Ranah 3 Warna   | Ahmad Fuadi   |
 | Dilan 1990      | Pidi Baiq     |
 | Dilan 1991      | Pidi Baiq     |
+
+---
+
+## 🔹 Instalasi
+
+**Persyaratan:** Python 3.7
+
+---
+
+## 🔹 Penggunaan
+
+**Jalankan aplikasi:**
+
+```bash
+python main.py
+```
+
+**Operasi CRUD:**
+
+* **Create:** Registrasi anggota, usulkan eBook.
+* **Read:** Lihat daftar eBook, eBook yang dipinjam, usulan buku, info perpustakaan.
+* **Update:** Admin approve/reject usulan eBook.
+* **Delete:** Anggota hapus usulan buku yang pending.
 
 ---
 
@@ -95,5 +138,4 @@ Selamat datang, Dedi!
 5. Lihat Usulan Buku
 6. Hapus Usulan Saya
 7. Logout
-
-
+```
