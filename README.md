@@ -1,6 +1,7 @@
 # 📚 E-Library Program
 
-**Developed by:** Shadrina Putri Nabila
+**Developed by:** Shadrina Putri Nabil
+
 **Class:** JCDSBSDAM29
 
 ---
