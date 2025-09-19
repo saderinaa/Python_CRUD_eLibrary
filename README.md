@@ -1,91 +1,130 @@
 # 📚 E-Library Python CRUD Application
 ---
 
-## Deskripsi
+## 🔹 Deskripsi
 
 Aplikasi Python sederhana untuk mengelola perpustakaan digital dengan operasi Create, Read, Update, dan Delete (CRUD) pada buku dan anggota.
 
 ---
 
-## Business Understanding
+## 🔹 Tujuan Sistem
 
-Proyek ini dirancang untuk perpustakaan atau koleksi pribadi untuk memudahkan pengelolaan buku dan anggota. Manajemen yang efisien memastikan ketersediaan buku, pelacakan peminjaman, dan pengelolaan anggota yang baik.
+Sistem ini dirancang untuk perpustakaan internal (sekolah, kampus, komunitas) agar pengelolaan buku dan anggota lebih efisien. Anggota terdaftar dapat meminjam eBook dan mengusulkan buku baru, sementara non-anggota tidak dapat mengakses fitur ini.
 
 **Manfaat:**
 
-* Pengelolaan buku lebih efisien
-* Pelacakan anggota dan peminjaman mudah
-* Proses peminjaman cepat dan jelas
-* Mempermudah pengawasan perpustakaan
+* Pengelolaan buku digital lebih mudah
+* Pelacakan peminjaman anggota cepat dan jelas
+* Pengelolaan usulan buku terstruktur
 
-**Sasaran Pengguna:** Administrator/Pustakawan dan Anggota Terdaftar.
-
----
-
-## Fitur
-
-* **Create (Tambah Buku/Anggota):** Menambahkan buku atau anggota baru dengan detail lengkap.
-* **Read (Lihat Buku/Anggota):** Menampilkan daftar buku atau anggota, mencari berdasarkan ID, judul, atau nama.
-* **Update:** Memperbarui data buku atau anggota sesuai kebutuhan.
-* **Delete:** Menghapus buku atau anggota yang sudah tidak digunakan.
+**Sasaran Pengguna:** Anggota Terdaftar dan Administrator/Pustakawan
 
 ---
 
-## Instalasi
-Persyaratan:
-Python 3.13
+## 🔹 Fitur
+
+* **Create:**
+
+  * Registrasi anggota baru
+  * Usulkan eBook baru
+
+* **Read:**
+
+  * Lihat daftar eBook
+  * Lihat eBook yang dipinjam
+  * Lihat usulan buku
+
+* **Update:**
+
+  * Admin dapat approve/reject usulan buku
+
+* **Delete:**
+
+  * Anggota dapat menghapus usulan buku sendiri yang berstatus pending
+
 ---
 
-## Model Data
+## 🔹 Instalasi
 
-**Buku:**
+**Persyaratan:**
 
-* `id` (String, Unik)
-* `title` (String)
-* `author` (String)
+* Python 3.13
+
+---
+
+## 🔹 Penggunaan
+
+1. Jalankan aplikasi:
+
+```bash
+python main.py
+```
+
+2. Pilih menu utama untuk mengakses fitur: member, registrasi, lihat eBook, login admin, info perpustakaan, atau keluar.
+
+---
+
+## 🔹 Struktur Data
+
+| Variabel          | Tipe Data | Keterangan                                |
+| ----------------- | --------- | ----------------------------------------- |
+| `suggested_books` | list      | Daftar buku yang diusulkan                |
+| `borrowed_books`  | dict      | Data peminjaman eBook (key: code member)  |
+| `members`         | list      | Daftar anggota terdaftar                  |
+| `ebooks`          | list      | Koleksi eBook (dictionary: title, author) |
+| `admins`          | list      | Daftar admin                              |
+
+---
+
+## 🔹 Data Dummy
 
 **Anggota:**
 
-* `name` (String)
-* `email` (String, opsional)
-* `borrowed_books` (List)
+| Code | Nama  | Email                                     | Phone        | Alamat   |
+| ---- | ----- | ----------------------------------------- | ------------ | -------- |
+| B01  | Andi  | [andi@email.com](mailto:andi@email.com)   | 08123456789  | Jakarta  |
+| B02  | Budi  | [budi@email.com](mailto:budi@email.com)   | 082233445566 | Bandung  |
+| B03  | Citra | [citra@email.com](mailto:citra@email.com) | 083344556677 | Surabaya |
+
+**Buku:**
+
+| Judul Buku      | Penulis       |
+| --------------- | ------------- |
+| Bumi            | Tere Liye     |
+| Bulan           | Tere Liye     |
+| Matahari        | Tere Liye     |
+| Rindu           | Tere Liye     |
+| Ayah            | Andrea Hirata |
+| Laskar Pelangi  | Andrea Hirata |
+| Negeri 5 Menara | Ahmad Fuadi   |
+| Ranah 3 Warna   | Ahmad Fuadi   |
+| Dilan 1990      | Pidi Baiq     |
+| Dilan 1991      | Pidi Baiq     |
 
 ---
 
-## Struktur Data
-
-| Variabel          | Tipe Data | Keterangan                               |
-| ----------------- | --------- | ---------------------------------------- |
-| `suggested_books` | list      | Daftar buku rekomendasi                  |
-| `borrowed_books`  | dict      | Data peminjaman buku (key: ID buku)      |
-| `members`         | list      | Anggota terdaftar                        |
-| `ebooks`          | list      | Koleksi buku (dictionary: title, author) |
-
----
-
-## Data Dummy
-
-| ID  | Judul Buku | Penulis   |
-| --- | ---------- | --------- |
-| B01 | Bumi       | Tere Liye |
-| B02 | Bulan      | Tere Liye |
-| B03 | Anak Badai | Tere Liye |
-
----
-
-## Contoh Interaksi
+## 🔹 Contoh Interaksi
 
 ```text
 Selamat datang di E-Library!
-1. Lihat Koleksi Buku
-2. Tambah Buku
-3. Pinjam Buku
-4. Keluar
+1. Menu Member
+2. Registrasi Member
+3. Lihat eBook
+4. Login Admin
+5. Info Perpustakaan
+6. Keluar
 
-Daftar Buku Tersedia:
-B01 - Bumi (Tere Liye)
-B02 - Bulan (Tere Liye)
-B03 - Anak Badai (Tere Liye)
+Pilih menu: 1
+Masukkan email member: andi@email.com
+Selamat datang, Andi!
 
-Buku 'Bumi' berhasil dipinjam oleh Budi.
+=== Dashboard Member ===
+1. Lihat eBook
+2. Pinjam eBook
+3. Lihat eBook yang dipinjam
+4. Usulkan Buku
+5. Lihat Usulan Buku
+6. Hapus Usulan Saya
+7. Logout
 ```
+
