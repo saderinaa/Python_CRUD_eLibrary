@@ -1,29 +1,58 @@
-# 📚 E-Library Program
+# 📚 E-Library Python CRUD Application
+---
 
-## 🔹 **Deskripsi**
+## Deskripsi
 
-E-Library adalah aplikasi sederhana untuk mengelola buku digital, dirancang agar pengguna dapat dengan mudah menambah, melihat, dan meminjam buku.
-Program ini membantu mengatur koleksi buku dan transaksi peminjaman secara efisien.
-
-Pengguna dapat:
-
-* Menambahkan buku baru ke koleksi
-* Melihat daftar buku yang tersedia
-* Meminjam buku
-* Mengelola anggota dan transaksi peminjaman
+Aplikasi Python sederhana untuk mengelola perpustakaan digital dengan operasi Create, Read, Update, dan Delete (CRUD) pada buku dan anggota.
 
 ---
 
-## 🔹 **Fitur**
+## Business Understanding
 
-* **Tambah Buku:** Menambahkan buku ke koleksi.
-* **Daftar Buku:** Menampilkan seluruh buku yang tersedia.
-* **Peminjaman Buku:** Meminjam buku oleh anggota.
-* **Data Anggota:** Menyimpan informasi anggota terdaftar.
+Proyek ini dirancang untuk perpustakaan atau koleksi pribadi untuk memudahkan pengelolaan buku dan anggota. Manajemen yang efisien memastikan ketersediaan buku, pelacakan peminjaman, dan pengelolaan anggota yang baik.
+
+**Manfaat:**
+
+* Pengelolaan buku lebih efisien
+* Pelacakan anggota dan peminjaman mudah
+* Proses peminjaman cepat dan jelas
+* Mempermudah pengawasan perpustakaan
+
+**Sasaran Pengguna:** Administrator/Pustakawan dan Anggota Terdaftar.
 
 ---
 
-## 🔹 **Struktur Data**
+## Fitur
+
+* **Create (Tambah Buku/Anggota):** Menambahkan buku atau anggota baru dengan detail lengkap.
+* **Read (Lihat Buku/Anggota):** Menampilkan daftar buku atau anggota, mencari berdasarkan ID, judul, atau nama.
+* **Update:** Memperbarui data buku atau anggota sesuai kebutuhan.
+* **Delete:** Menghapus buku atau anggota yang sudah tidak digunakan.
+
+---
+
+## Instalasi
+Persyaratan:
+Python 3.13
+---
+
+## Model Data
+
+**Buku:**
+
+* `id` (String, Unik)
+* `title` (String)
+* `author` (String)
+
+**Anggota:**
+
+* `name` (String)
+* `email` (String, opsional)
+* `borrowed_books` (List)
+
+---
+
+## Struktur Data
 
 | Variabel          | Tipe Data | Keterangan                               |
 | ----------------- | --------- | ---------------------------------------- |
@@ -34,7 +63,7 @@ Pengguna dapat:
 
 ---
 
-## 🔹 **Data Dummy Contoh**
+## Data Dummy
 
 | ID  | Judul Buku | Penulis   |
 | --- | ---------- | --------- |
@@ -44,7 +73,7 @@ Pengguna dapat:
 
 ---
 
-## 🔹 **Contoh Interaksi**
+## Contoh Interaksi
 
 ```text
 Selamat datang di E-Library!
@@ -53,16 +82,10 @@ Selamat datang di E-Library!
 3. Pinjam Buku
 4. Keluar
 
-Pilih menu: 1
 Daftar Buku Tersedia:
 B01 - Bumi (Tere Liye)
 B02 - Bulan (Tere Liye)
 B03 - Anak Badai (Tere Liye)
 
-Pilih menu: 3
-Masukkan ID Buku: B01
-Masukkan Nama Anggota: Budi
 Buku 'Bumi' berhasil dipinjam oleh Budi.
 ```
-
----
