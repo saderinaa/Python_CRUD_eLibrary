@@ -1,129 +1,52 @@
 # 📚 E-Library Python CRUD Application
+Aplikasi Python untuk mengelola eBook dengan fitur CRUD untuk anggota dan admin.
 
-## 🔹 Deskripsi
+## 🔹 Sasaran Pengguna
 
-Aplikasi Python sederhana untuk mengelola perpustakaan digital dengan operasi Create, Read, Update, dan Delete (CRUD) pada buku dan anggota.
-
----
-
-## 🔹 Tujuan Sistem
-
-Sistem ini dirancang untuk perpustakaan internal (sekolah, kampus, komunitas) agar pengelolaan buku dan anggota lebih efisien. Anggota terdaftar dapat meminjam eBook dan mengusulkan buku baru, sementara non-anggota tidak dapat mengakses fitur ini.
-
-**Manfaat:**
-
-* Pengelolaan buku digital lebih mudah
-* Pelacakan peminjaman anggota cepat dan jelas
-* Pengelolaan usulan buku terstruktur
-
-**Sasaran Pengguna:** Anggota Terdaftar dan Administrator/Pustakawan
-
----
+* **Member / Anggota:** Dapat melihat, meminjam, mengusulkan, dan menghapus usulan eBook.
+* **Admin:** Mengelola dan menyetujui atau menolak usulan eBook.
 
 ## 🔹 Fitur
 
-* **Create:**
+### Member
 
-  * Registrasi anggota baru
-  * Usulkan eBook baru
+* **Registrasi:** Mendaftar menjadi anggota.
+* **Login:** Akses dashboard anggota.
+* **Lihat eBook:** Melihat daftar eBook yang tersedia.
+* **Pinjam eBook:** Meminjam eBook.
+* **Usulkan Buku:** Menambahkan usulan eBook baru.
+* **Lihat Usulan:** Melihat usulan eBook.
+* **Hapus Usulan Saya:** Menghapus usulan eBook yang masih pending.
 
-* **Read:**
+### Admin
 
-  * Lihat daftar eBook
-  * Lihat eBook yang dipinjam
-  * Lihat usulan buku
+* **Login Admin:** Masuk ke dashboard admin.
+* **Lihat Semua Usulan:** Melihat daftar semua usulan eBook.
+* **Approve/Reject Usulan:** Menyetujui atau menolak usulan eBook.
 
-* **Update:**
+### Informasi Perpustakaan
 
-  * Admin dapat approve/reject usulan buku
-
-* **Delete:**
-
-  * Anggota dapat menghapus usulan buku sendiri yang berstatus pending
-
----
+* Peminjaman eBook: 7 hari per buku.
+* Buku bisa dibaca online selama periode peminjaman.
+* Bantuan & Kontak: [library@example.com](mailto:library@example.com) / 123-456-7890 (Senin-Jumat 08:00-16:00)
 
 ## 🔹 Instalasi
 
-**Persyaratan:**
+1. **Prerequisites:**
 
-* Python 3.13
+   * Python 3.13.5
 
----
-
-## 🔹 Penggunaan
-
-1. Jalankan aplikasi:
+2. **Jalankan aplikasi:**
 
 ```bash
 python main.py
 ```
 
-2. Pilih menu utama untuk mengakses fitur: member, registrasi, lihat eBook, login admin, info perpustakaan, atau keluar.
+## 🔹 Data Model
 
----
-
-## 🔹 Struktur Data
-
-| Variabel          | Tipe Data | Keterangan                                |
-| ----------------- | --------- | ----------------------------------------- |
-| `suggested_books` | list      | Daftar buku yang diusulkan                |
-| `borrowed_books`  | dict      | Data peminjaman eBook (key: code member)  |
-| `members`         | list      | Daftar anggota terdaftar                  |
-| `ebooks`          | list      | Koleksi eBook (dictionary: title, author) |
-| `admins`          | list      | Daftar admin                              |
-
----
-
-## 🔹 Data Dummy
-
-**Anggota:**
-
-| Code | Nama  | Email                                     | Phone        | Alamat   |
-| ---- | ----- | ----------------------------------------- | ------------ | -------- |
-| B01  | Andi  | [andi@email.com](mailto:andi@email.com)   | 08123456789  | Jakarta  |
-| B02  | Budi  | [budi@email.com](mailto:budi@email.com)   | 082233445566 | Bandung  |
-| B03  | Citra | [citra@email.com](mailto:citra@email.com) | 083344556677 | Surabaya |
-
-**Buku:**
-
-| Judul Buku      | Penulis       |
-| --------------- | ------------- |
-| Bumi            | Tere Liye     |
-| Bulan           | Tere Liye     |
-| Matahari        | Tere Liye     |
-| Rindu           | Tere Liye     |
-| Ayah            | Andrea Hirata |
-| Laskar Pelangi  | Andrea Hirata |
-| Negeri 5 Menara | Ahmad Fuadi   |
-| Ranah 3 Warna   | Ahmad Fuadi   |
-| Dilan 1990      | Pidi Baiq     |
-| Dilan 1991      | Pidi Baiq     |
-
----
-
-## 🔹 Contoh Interaksi
-
-```text
-Selamat datang di E-Library!
-1. Menu Member
-2. Registrasi Member
-3. Lihat eBook
-4. Login Admin
-5. Info Perpustakaan
-6. Keluar
-
-Pilih menu: 1
-Masukkan email member: andi@email.com
-Selamat datang, Andi!
-
-=== Dashboard Member ===
-1. Lihat eBook
-2. Pinjam eBook
-3. Lihat eBook yang dipinjam
-4. Usulkan Buku
-5. Lihat Usulan Buku
-6. Hapus Usulan Saya
-7. Logout
-```
+* **Members / Anggota:** `code`, `name`, `email`, `phone`, `address`
+* **eBooks:** `title`, `author`
+* **Admins:** `email`, `password`
+* **Borrowed Books:** Dictionary dengan `member code` sebagai key, list eBook sebagai value.
+* **Suggested Books:** List eBook yang diusulkan dengan status (`pending`, `approve`, `reject`).
 
