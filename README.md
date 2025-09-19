@@ -7,15 +7,15 @@
 
 ## 🔹 **Deskripsi**
 
-E-Library, aplikasi sederhana untuk mengelola buku digital itu.
+E-Library adalah aplikasi sederhana untuk mengelola buku digital, dirancang agar pengguna dapat dengan mudah menambah, melihat, dan meminjam buku.
+Program ini membantu mengatur koleksi buku dan transaksi peminjaman secara efisien.
+
 Pengguna dapat:
 
 * Menambahkan buku baru ke koleksi
 * Melihat daftar buku yang tersedia
 * Meminjam buku
 * Mengelola anggota dan transaksi peminjaman
-
-Struktur data Python, digunakan untuk menyimpan informasi buku, anggota, dan peminjaman.
 
 ---
 
