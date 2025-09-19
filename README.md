@@ -1,11 +1,5 @@
 # 📚 E-Library Program
 
-**Developed by:** Shadrina Putri Nabila
-
-**Class:** JCDSBSDAM29
-
----
-
 ## 🔹 **Deskripsi**
 
 E-Library adalah aplikasi sederhana untuk mengelola buku digital, dirancang agar pengguna dapat dengan mudah menambah, melihat, dan meminjam buku.
